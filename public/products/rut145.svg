@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
+  <rect width="400" height="400" fill="#1A1A1A"/>
+  <g transform="translate(110 90)">
+    <rect x="0" y="0" width="150" height="190" rx="8" fill="#3A3A3A" stroke="#555" stroke-width="2"/>
+    <rect x="14" y="18" width="122" height="120" rx="4" fill="#262626"/>
+    <text x="75" y="170" font-family="Arial" font-size="20" font-weight="bold" fill="#cfcfcf" text-anchor="middle">RUT145</text>
+    <circle cx="130" cy="14" r="5" fill="#b08d57"/>
+    <rect x="140" y="150" width="60" height="50" rx="6" fill="#2e2e2e" stroke="#555" stroke-width="2"/>
+    <circle cx="190" cy="190" r="6" fill="#b08d57"/>
+  </g>
+</svg>
