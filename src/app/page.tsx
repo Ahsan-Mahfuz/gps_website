@@ -33,7 +33,7 @@ export default function HomePage() {
         <div className="relative grid w-full items-center gap-10 lg:grid-cols-2 lg:gap-14">
           {/* Image bleeds to the screen's left edge — no container padding */}
           <Reveal>
-            <div className="relative aspect-[4/3] w-full overflow-hidden bg-black sm:aspect-[16/10] lg:aspect-auto lg:h-[640px]">
+            <div className="relative aspect-[4/3] w-full overflow-hidden bg-background sm:aspect-[16/10] lg:aspect-auto lg:h-[640px]">
               <Image
                 src="/home/home.png"
                 alt="AccuTrack live vehicle tracking on a phone"
