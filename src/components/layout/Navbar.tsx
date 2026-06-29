@@ -6,9 +6,11 @@ import { useState } from "react";
 import { Badge, Drawer } from "antd";
 import { Logo } from "@/components/ui/Logo";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
+import { SearchModal } from "./SearchModal";
+import { AccountMenu } from "./AccountMenu";
 import { NAV_LINKS } from "@/lib/site";
 import { useAppSelector } from "@/lib/store/hooks";
-import { cn } from "@/lib/utils";
+import { cn, isAppRoute } from "@/lib/utils";
 
 function SearchIcon() {
   return (
@@ -38,12 +40,16 @@ function MenuIcon() {
 export function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
   const count = useAppSelector((s) =>
     s.cart.items.reduce((n, i) => n + i.quantity, 0)
   );
 
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
+
+  // App/auth routes render their own chrome.
+  if (isAppRoute(pathname)) return null;
 
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-background/90 backdrop-blur-md">
@@ -66,24 +72,20 @@ export function Navbar() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-3 sm:gap-4">
-          <button aria-label="Search" className="hidden text-foreground transition-colors hover:text-primary sm:block">
+        <div className="flex items-center gap-2 sm:gap-3">
+          <button onClick={() => setSearchOpen(true)} aria-label="Search" className="hidden h-9 w-9 items-center justify-center text-foreground transition-colors hover:text-primary sm:flex">
             <SearchIcon />
           </button>
-          <Link href="/cart" aria-label="Cart" className="text-foreground transition-colors hover:text-primary">
+          <Link href="/cart" aria-label="Cart" className="flex h-9 w-9 items-center justify-center text-foreground transition-colors hover:text-primary">
             <Badge count={count} size="small" color="#FD0010" offset={[2, -2]}>
-              <span className="text-foreground"><CartIcon /></span>
+              <span className="flex text-foreground"><CartIcon /></span>
             </Badge>
           </Link>
-          <Link
-            href="/account"
-            aria-label="Account"
-            className="h-8 w-8 rounded-full border-2 border-primary bg-elevated"
-          />
+          <AccountMenu />
           <ThemeToggle className="hidden sm:grid" />
           <button
             aria-label="Open menu"
-            className="text-foreground md:hidden"
+            className="flex h-9 w-9 items-center justify-center text-foreground md:hidden"
             onClick={() => setOpen(true)}
           >
             <MenuIcon />
@@ -119,6 +121,8 @@ export function Navbar() {
           </div>
         </nav>
       </Drawer>
+
+      <SearchModal open={searchOpen} onClose={() => setSearchOpen(false)} />
     </header>
   );
 }

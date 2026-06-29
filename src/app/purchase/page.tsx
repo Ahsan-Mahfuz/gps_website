@@ -3,6 +3,7 @@ import { Container } from "@/components/ui/Container";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { ShippingForm } from "@/components/cart/ShippingForm";
 import { PurchaseSummary } from "@/components/cart/PurchaseSummary";
+import { AuthGate } from "@/components/auth/AuthGate";
 
 export const metadata: Metadata = {
   title: "Purchase",
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
 
 export default function PurchasePage() {
   return (
+    <AuthGate>
     <Container className="py-12">
       <Breadcrumb
         items={[
@@ -36,5 +38,6 @@ export default function PurchasePage() {
         </aside>
       </div>
     </Container>
+    </AuthGate>
   );
 }

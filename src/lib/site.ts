@@ -29,16 +29,12 @@ export const FOOTER_COLUMNS = [
     title: "Where to Buy",
     links: [
       { label: "Location", href: "#" },
-      { label: "Location", href: "#" },
-      { label: "Location", href: "#" },
     ],
   },
   {
     title: "Subscription Plan",
     links: [
       { label: "Plan 1", href: "#" },
-      { label: "Plan 2", href: "#" },
-      { label: "Plan 3", href: "#" },
     ],
   },
 ];

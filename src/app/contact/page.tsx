@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { ContactForm } from "@/components/contact/ContactForm";
@@ -35,23 +36,22 @@ export default function ContactPage() {
         {/* Left: map + info cards */}
         <div className="space-y-6">
           <div className="relative overflow-hidden rounded-2xl border border-line bg-elevated">
-            <div className="relative h-72 w-full bg-[radial-gradient(circle_at_30%_40%,rgba(253,0,16,0.18),transparent_50%)]">
-              <svg className="absolute inset-0 h-full w-full opacity-50" viewBox="0 0 400 280" fill="none">
-                {Array.from({ length: 12 }).map((_, i) => (
-                  <path key={i} d={`M0 ${20 + i * 22} Q 200 ${i * 18} 400 ${30 + i * 20}`} stroke="rgb(var(--line))" strokeWidth="1" />
-                ))}
-                <path d="M40 240 Q 160 120 260 80 T 380 40" stroke="#FD0010" strokeWidth="2.5" fill="none" />
-              </svg>
-              <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 font-anton text-2xl uppercase text-foreground">
-                Headquarters
-              </span>
-            </div>
-            <div className="flex items-end justify-between gap-4 p-6">
-              <div>
-                <h3 className="font-anton text-lg uppercase">Headquarters</h3>
-                <p className="mt-1 text-sm text-muted">{SITE.address}</p>
+            <div className="relative h-80 w-full">
+              <Image
+                src="/others/map.png"
+                alt="AccuTrack headquarters location map"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-background/95 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-6">
+                <div>
+                  <h3 className="font-anton text-lg uppercase">Headquarters</h3>
+                  <p className="mt-1 text-sm text-muted">{SITE.address}</p>
+                </div>
+                <Button href="#" className="shrink-0">Get Direction</Button>
               </div>
-              <Button href="#" className="shrink-0">Get Direction</Button>
             </div>
           </div>
 

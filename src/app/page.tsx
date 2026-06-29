@@ -1,9 +1,10 @@
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Reveal } from "@/components/ui/Reveal";
 import { Stars } from "@/components/ui/Stars";
-import { PhoneMockup } from "@/components/home/PhoneMockup";
+import { WatchDemo } from "@/components/home/WatchDemo";
 import {
   HERO_STATS,
   HERO_TAGS,
@@ -27,13 +28,23 @@ export default function HomePage() {
   return (
     <>
       {/* ───────── HERO ───────── */}
-      <section className="relative overflow-hidden border-b border-line">
-        <div className="pointer-events-none absolute right-0 top-0 h-full w-1/2 bg-[radial-gradient(circle_at_70%_30%,rgba(253,0,16,0.12),transparent_60%)]" />
-        <Container className="grid items-center gap-12 py-16 lg:grid-cols-2 lg:py-24">
+      <section className="relative overflow-hidden border-b border-line bg-background">
+        <div className="pointer-events-none absolute right-0 top-0 h-full w-1/2 bg-[radial-gradient(circle_at_75%_30%,rgba(253,0,16,0.14),transparent_55%)]" />
+        <div className="relative grid w-full items-center gap-10 lg:grid-cols-2 lg:gap-14">
+          {/* Image bleeds to the screen's left edge — no container padding */}
           <Reveal>
-            <PhoneMockup />
+            <div className="relative aspect-[4/3] w-full overflow-hidden bg-black sm:aspect-[16/10] lg:aspect-auto lg:h-[640px]">
+              <Image
+                src="/home/home.png"
+                alt="AccuTrack live vehicle tracking on a phone"
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover object-left-top"
+              />
+            </div>
           </Reveal>
-          <Reveal delay={120} className="flex flex-col items-start">
+          <Reveal delay={120} className="flex flex-col items-start px-5 pb-12 sm:px-8 lg:px-12 lg:py-10">
             <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-primary">
               <span className="h-2 w-2 animate-pulse rounded-full bg-primary" />
               Live GPS · Always Connected
@@ -47,7 +58,7 @@ export default function HomePage() {
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Button href="/product">Order Now</Button>
-              <Button href="#how" variant="outline">Watch Demo</Button>
+              <WatchDemo />
             </div>
             <div className="mt-8 flex flex-wrap gap-2.5">
               {HERO_TAGS.map((t) => (
@@ -57,12 +68,12 @@ export default function HomePage() {
               ))}
             </div>
           </Reveal>
-        </Container>
+        </div>
       </section>
 
       {/* ───────── STATS BAR ───────── */}
-      <section className="border-b border-line bg-surface">
-        <Container className="grid grid-cols-2 gap-8 py-10 md:grid-cols-4">
+      <section className="border-b border-line bg-background">
+        <div className="mx-auto grid max-w-[1600px] grid-cols-2 gap-8 px-4 py-10 sm:px-6 md:grid-cols-4 lg:px-10">
           {HERO_STATS.map((s) => (
             <div key={s.label} className="text-center">
               <div className="font-anton text-4xl text-foreground">
@@ -77,7 +88,7 @@ export default function HomePage() {
               <div className="mt-1 text-sm text-muted">{s.label}</div>
             </div>
           ))}
-        </Container>
+        </div>
       </section>
 
       {/* ───────── FEATURES ───────── */}

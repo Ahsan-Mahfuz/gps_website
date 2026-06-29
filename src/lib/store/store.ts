@@ -1,5 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import cartReducer from "./slices/cartSlice";
+import authReducer from "./slices/authSlice";
 
 /**
  * Redux store. Slices are local/UI-only for now (design phase).
@@ -9,6 +10,7 @@ export const makeStore = () =>
   configureStore({
     reducer: {
       cart: cartReducer,
+      auth: authReducer,
     },
   });
 

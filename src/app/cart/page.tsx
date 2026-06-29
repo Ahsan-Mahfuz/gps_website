@@ -26,7 +26,7 @@ export default function CartPage() {
         </div>
 
         <aside className="h-fit lg:sticky lg:top-24">
-          <OrderSummary cta="Checkout" ctaHref="/purchase" />
+          <OrderSummary cta="Checkout" ctaHref="/purchase" requireAuth />
         </aside>
       </div>
     </Container>

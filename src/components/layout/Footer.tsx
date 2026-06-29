@@ -1,8 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Logo } from "@/components/ui/Logo";
 import { FOOTER_COLUMNS, FOOTER_LEGAL, SITE } from "@/lib/site";
+import { isAppRoute } from "@/lib/utils";
 
 function MailIcon() {
   return (
@@ -14,6 +16,9 @@ function MailIcon() {
 }
 
 export function Footer() {
+  const pathname = usePathname();
+  if (isAppRoute(pathname)) return null;
+
   return (
     <footer className="border-t border-line bg-surface">
       <div className="mx-auto max-w-container px-5 py-14 sm:px-8 lg:px-10">

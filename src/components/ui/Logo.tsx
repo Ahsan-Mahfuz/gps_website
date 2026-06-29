@@ -1,19 +1,19 @@
 import Link from "next/link";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
-/**
- * Wordmark logo. Styled with the Anton display face and the brand red accent.
- * Swap for the SVG asset later if needed — kept as text for crisp theming.
- */
+/** Brand logo (raster wordmark). White artwork — reads on dark; inverts on light theme. */
 export function Logo({ className }: { className?: string }) {
   return (
-    <Link href="/" aria-label="AccuTrack home" className={cn("inline-flex items-end leading-none", className)}>
-      <span className="font-anton text-2xl uppercase tracking-tight text-foreground">
-        Accu
-      </span>
-      <span className="font-anton text-2xl uppercase tracking-tight text-primary italic">
-        Track
-      </span>
+    <Link href="/" aria-label="AccuTrack home" className={cn("inline-flex items-center", className)}>
+      <Image
+        src="/logo/logo.svg"
+        alt="AccuTrack"
+        width={163}
+        height={60}
+        priority
+        className="h-12 w-auto"
+      />
     </Link>
   );
 }

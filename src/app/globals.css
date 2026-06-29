@@ -13,10 +13,10 @@
  */
 :root,
 [data-theme="dark"] {
-  --bg: 13 13 13;            /* #0D0D0D */
-  --surface: 20 20 20;      /* #141414 */
-  --elevated: 31 31 31;     /* #1F1F1F */
-  --card: 26 26 26;         /* #1A1A1A */
+  --bg: 0 0 0;              /* #000000 — pure black */
+  --surface: 13 13 13;      /* #0D0D0D */
+  --elevated: 26 26 26;     /* #1A1A1A */
+  --card: 18 18 18;         /* #121212 */
 
   --primary: 253 0 16;      /* #FD0010 */
   --primary-dark: 183 28 28;/* #B71C1C */
