@@ -24,7 +24,7 @@ export function AntdProvider({ children }: { children: React.ReactNode }) {
             colorPrimary: BRAND,
             colorInfo: BRAND,
             borderRadius: 10,
-            fontFamily: "var(--font-inria), system-ui, sans-serif",
+            fontFamily: "var(--font-poppins), system-ui, sans-serif",
             colorBgBase: isDark ? "#0D0D0D" : "#FFFFFF",
           },
           components: {

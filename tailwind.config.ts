@@ -33,8 +33,8 @@ const config: Config = {
       fontFamily: {
         // Anton — display / headings
         anton: ["var(--font-anton)", "Impact", "sans-serif"],
-        // Inria Sans — body / descriptions
-        inria: ["var(--font-inria)", "system-ui", "sans-serif"],
+        // Poppins — body / subtitle / descriptions
+        poppins: ["var(--font-poppins)", "system-ui", "sans-serif"],
       },
       maxWidth: {
         container: "1280px",

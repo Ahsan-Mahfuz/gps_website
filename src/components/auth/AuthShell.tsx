@@ -21,7 +21,7 @@ export function AuthShell({
         </div>
         <div className="rounded-2xl border border-line bg-card p-8 sm:p-10">
           <h1 className="font-anton text-3xl uppercase sm:text-4xl">{title}</h1>
-          {subtitle && <p className="mt-2 text-sm leading-relaxed text-muted">{subtitle}</p>}
+          {subtitle && <p className="font-desc mt-2 text-base leading-relaxed text-muted">{subtitle}</p>}
           <div className="mt-8">{children}</div>
         </div>
         {footer && <div className="mt-6 text-center text-sm text-muted">{footer}</div>}

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Anton, Inria_Sans } from "next/font/google";
+import { Anton, Poppins } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/lib/Providers";
 import { Navbar } from "@/components/layout/Navbar";
@@ -13,12 +13,13 @@ const anton = Anton({
   display: "swap",
 });
 
-const inria = Inria_Sans({
-  weight: ["300", "400", "700"],
+const poppins = Poppins({
+  weight: ["300", "400", "500", "600", "700"],
   subsets: ["latin"],
-  variable: "--font-inria",
+  variable: "--font-poppins",
   display: "swap",
 });
+
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
@@ -50,6 +51,11 @@ export const metadata: Metadata = {
     description: SITE.description,
   },
   robots: { index: true, follow: true },
+  icons: {
+    icon: [{ url: "/logo/logo.svg", type: "image/svg+xml" }],
+    shortcut: "/logo/logo.svg",
+    apple: "/logo/logo.svg",
+  },
 };
 
 export const viewport: Viewport = {
@@ -65,7 +71,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" data-theme="dark" suppressHydrationWarning>
-      <body className={`${anton.variable} ${inria.variable} font-inria`}>
+      <body
+        className={`${anton.variable} ${poppins.variable} font-poppins`}
+      >
         <Providers>
           <Navbar />
           <main className="min-h-screen">{children}</main>

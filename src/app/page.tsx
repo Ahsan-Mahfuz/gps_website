@@ -53,7 +53,7 @@ export default function HomePage() {
               Track Every<br />Vehicle,<br />
               <span className="text-primary">Every Second.</span>
             </h1>
-            <p className="mt-6 max-w-md text-base leading-relaxed text-muted">
+            <p className="font-desc mt-6 max-w-md text-lg leading-relaxed text-muted">
               Real-time 4G-LTE tracking, instant theft alerts, and a live web dashboard — engineered for fleet operators, logistics teams, and private owners.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
@@ -99,7 +99,7 @@ export default function HomePage() {
             <h2 className="max-w-2xl font-anton text-4xl uppercase leading-tight sm:text-5xl">
               Everything you need to stay in control
             </h2>
-            <p className="mt-4 max-w-xl text-muted">
+            <p className="font-desc mt-4 max-w-xl text-base text-muted">
               Built for fleet managers and individual owners who need reliable, always-on vehicle intelligence.
             </p>
           </Reveal>
@@ -126,7 +126,7 @@ export default function HomePage() {
             <h2 className="max-w-2xl font-anton text-4xl uppercase leading-tight sm:text-5xl">
               Up &amp; running in minutes
             </h2>
-            <p className="mt-4 max-w-xl text-muted">
+            <p className="font-desc mt-4 max-w-xl text-base text-muted">
               No technician needed. Simple plug-and-track setup with instant cloud connectivity.
             </p>
           </Reveal>
@@ -166,7 +166,7 @@ export default function HomePage() {
             <h2 className="font-anton text-4xl uppercase leading-tight sm:text-5xl">
               Simple, transparent plans
             </h2>
-            <p className="mt-4 text-muted">One-time device cost. No hidden fees. Cancel anytime.</p>
+            <p className="font-desc mt-4 text-base text-muted">One-time device cost. No hidden fees. Cancel anytime.</p>
           </Reveal>
 
           <div className="mx-auto mt-12 grid max-w-5xl gap-6 lg:grid-cols-3">
@@ -217,7 +217,7 @@ export default function HomePage() {
           <Reveal className="text-center">
             <SectionLabel><span className="mx-auto">Customer Reviews</span></SectionLabel>
             <h2 className="font-anton text-4xl uppercase leading-tight sm:text-5xl">Trusted by thousands</h2>
-            <p className="mt-4 text-muted">Real stories from owners and operators who rely on AccuTrack.</p>
+            <p className="font-desc mt-4 text-base text-muted">Real stories from owners and operators who rely on AccuTrack.</p>
           </Reveal>
 
           <div className="mt-12 grid gap-6 lg:grid-cols-3">
